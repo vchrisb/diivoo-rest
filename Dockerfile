@@ -1,8 +1,7 @@
-FROM python:3.11.4-alpine3.18
+FROM python:3.11.4-slim-bookworm
 ADD ./api /app
 WORKDIR /app
 ADD requirements.txt /
-RUN apk add --no-cache git
 RUN pip install -r /requirements.txt
 
 EXPOSE 8080
